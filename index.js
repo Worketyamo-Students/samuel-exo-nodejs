@@ -6,7 +6,7 @@ const app = express()
 app.use(bodyParser.json());
 app.use("/",router)
 
-app.listen(3000 , (err)=>{
+app.listen(5000, (err)=>{
     if(err) throw err
-    console.log("le serveur tourne sur le port 3000")
+    console.log("le serveur tourne sur le port 5000")
 })  
