@@ -34,7 +34,13 @@ const bookController = {
        res.json(db.books)
     },
         getBookById : (req,res)=>{
-        
+        const books = readDb();
+        const book = books.books.find((book)=> book.id === parseInt(req.params.id))
+        if(!book){
+            return res.status(404).json({message: "book not found"})
+        }else{
+            res.json(book)
+        }
     },
     updateBook: (req,res)=>{
         
